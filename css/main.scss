@@ -302,6 +302,9 @@ h3 {
         }
 
     }
+    &_mobile-title {
+        display: none;
+    }
 }
 
 .services {
@@ -607,6 +610,7 @@ h3 {
             font-weight: 500;
             margin-top: 40px;
             text-align: center;
+            display: block;
 
             span {
                 font-weight: 700;

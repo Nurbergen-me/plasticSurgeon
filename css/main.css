@@ -264,6 +264,9 @@ h3 {
   font-weight: 700;
   margin-bottom: 16px;
 }
+.header_mobile-title {
+  display: none;
+}
 
 .services_title {
   margin-bottom: 15px;
@@ -528,6 +531,7 @@ h3 {
     font-weight: 500;
     margin-top: 40px;
     text-align: center;
+    display: block;
   }
   .header_mobile-title span {
     font-weight: 700;

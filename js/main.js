@@ -22,9 +22,11 @@ if (reviewsSwiper) {
             },
             576: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             992: {
                 slidesPerView: 3,
+                spaceBetween: 40,
             }
         }
     });
@@ -87,3 +89,25 @@ if (burgerMenu) {
         })
     })
 }
+
+
+// Chest services tabs
+
+const chestTabs = document.querySelectorAll('.chest-services_tab')
+const chestTabItems = document.querySelectorAll('.chest-services_item')
+
+if (chestTabs) {
+    chestTabs.forEach((tab, index) => {
+        tab.addEventListener('click', function() {
+            chestTabs.forEach(item => {
+                item.classList.remove('active')
+            })
+            chestTabItems.forEach(item => {
+                item.classList.remove('show')
+            })
+            chestTabs[index].classList.add('active')
+            chestTabItems[index].classList.add('show')
+        })
+    })
+}
+

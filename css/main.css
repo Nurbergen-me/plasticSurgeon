@@ -82,12 +82,14 @@ h3 {
   background: #00ADD9;
   display: flex;
   width: 340px;
+  max-width: 100%;
   padding: 16px 0;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   color: #fff;
   font-weight: 700;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -155,6 +157,26 @@ h3 {
 }
 .navbar_menu_item:hover {
   color: #00ADD9;
+}
+
+.page-navbar_title {
+  font-weight: 500;
+  margin-right: 70px;
+}
+.page-navbar_title span {
+  font-weight: 700;
+  color: #00ADD9;
+}
+.page-navbar .navbar_phone {
+  margin-left: 0;
+}
+.page-navbar .navbar_top {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #00ADD9;
+}
+.page-navbar .navbar_menu {
+  padding: 30px 0;
+  margin: 0;
 }
 
 .hidden {
@@ -364,11 +386,41 @@ h3 {
 }
 .reviews_slide {
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .reviews_img {
   width: 100%;
   margin-bottom: 20px;
+}
+.reviews_review {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 12px;
+  margin-bottom: 18px;
+}
+.reviews_review_name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.reviews_review_info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.reviews_review_date {
+  color: #aaa;
+  font-size: 10px;
+}
+.reviews_review_stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.reviews_review_body {
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .certificates {
@@ -438,6 +490,70 @@ h3 {
   margin-bottom: 20px;
 }
 
+.chest-offer {
+  background: url("../img/chest-offer.png") no-repeat center/cover;
+}
+.chest-offer_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chest-offer_title {
+  margin-bottom: 20px;
+}
+.chest-offer_text {
+  font-size: 20px;
+  font-weight: 500;
+  max-width: 570px;
+}
+.chest-offer_btn {
+  padding: 16px 28px;
+}
+.chest-services_title {
+  margin-bottom: 40px;
+}
+.chest-services_wrap {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 80px;
+}
+.chest-services_tab {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.chest-services_tab:before {
+  content: "";
+  background: #000;
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  margin-right: 22px;
+}
+.chest-services_tab.active {
+  color: #00ADD9;
+}
+.chest-services_tab.active:before {
+  background: #00ADD9;
+}
+.chest-services_item {
+  display: none;
+}
+.chest-services_item.show {
+  display: block;
+}
+.chest-services_img {
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+.chest-services_text {
+  margin-bottom: 40px;
+}
+
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 1120px;
@@ -447,6 +563,9 @@ h3 {
   }
   .swiper-button-prev {
     left: -40px;
+  }
+  .chest-services_wrap {
+    gap: 40px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -465,6 +584,21 @@ h3 {
   .reviews_swiper, .certificates_swiper {
     width: 94%;
     margin: 0 auto;
+  }
+  .page-navbar_title {
+    display: none;
+  }
+  .page-navbar .navbar_phone {
+    margin-left: auto;
+  }
+  .chest-services_title {
+    font-size: 36px;
+  }
+  .chest-services_tab {
+    font-size: 20px;
+  }
+  .chest-services_wrap {
+    grid-template-columns: 340px 1fr;
   }
 }
 @media screen and (max-width: 992px) {
@@ -561,10 +695,25 @@ h3 {
   .footer_item {
     width: 45%;
   }
+  .chest-offer_wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .chest-services_wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .chest-services_tab {
+    margin-bottom: 16px;
+  }
 }
 @media screen and (max-width: 768px) {
   .container {
     max-width: 90%;
+  }
+  h1 {
+    font-size: 32px;
   }
   h2 {
     font-size: 24px;
@@ -613,6 +762,7 @@ h3 {
     padding: 8px 24px;
     font-size: 16px;
     border-radius: 8px;
+    width: auto;
   }
   .services_title {
     margin-bottom: 8px;
@@ -649,7 +799,6 @@ h3 {
   }
   .reviews_slide {
     margin-top: 20px;
-    margin-bottom: 10px;
   }
   .posts_all {
     font-size: 16px;
@@ -686,5 +835,19 @@ h3 {
   }
   .footer_socials {
     margin-left: 0;
+  }
+  .chest-offer_title {
+    margin-bottom: 20px;
+  }
+  .chest-offer_text {
+    font-size: 14px;
+  }
+  .chest-services_title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .chest-services_tab {
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 }/*# sourceMappingURL=main.css.map */

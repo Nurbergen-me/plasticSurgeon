@@ -90,12 +90,14 @@ h3 {
     background: #00ADD9;
     display: flex;
     width: 340px;
+    max-width: 100%;
     padding: 16px 0;
     justify-content: center;
     align-items: center;
     font-size: 18px;
     color: #fff;
     font-weight: 700;
+    white-space: nowrap;
     cursor: pointer;
 }
 .container {
@@ -172,6 +174,29 @@ h3 {
                 color: #00ADD9;
             }
         }
+    }
+}
+
+.page-navbar {
+    &_title {
+        font-weight: 500;
+        margin-right: 70px;
+
+        span {
+            font-weight: 700;
+            color: #00ADD9;
+        }
+    }
+    .navbar_phone {
+        margin-left: 0;
+    }
+    .navbar_top {
+        padding-bottom: 18px;
+        border-bottom: 1px solid #00ADD9;
+    }
+    .navbar_menu {
+        padding: 30px 0;
+        margin: 0;
     }
 }
 
@@ -414,12 +439,43 @@ h3 {
 
     &_slide {
         margin-top: 40px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     &_img {
         width: 100%;
         margin-bottom: 20px;
+    }
+    &_review {
+        background: #fff;
+        border-radius: 10px;
+        padding: 16px 12px;
+        margin-bottom: 18px;
+
+        &_name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        &_info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        &_date {
+            color: #aaa;
+            font-size: 10px;
+        }
+        &_stars {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        &_body {
+            font-size: 10px;
+            font-weight: 500;
+        }
     }
 }
 
@@ -504,6 +560,96 @@ h3 {
     }
 
 }
+.chest {
+    &-offer {
+        background: url('../img/chest-offer.png') no-repeat center / cover;
+
+        &_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_title {
+            margin-bottom: 20px;
+        }
+        &_text {
+            font-size: 20px;
+            font-weight: 500;
+            max-width: 570px;
+        }
+        &_btn {
+            padding: 16px 28px;
+        }
+    }
+    &-services {
+        &_title {
+            margin-bottom: 40px;
+        }
+        &_wrap {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+        }
+        &_tab {
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                background: #000;
+                display: block;
+                width: 24px;
+                height: 2px;
+                border-radius: 2px;
+                margin-right: 22px;
+            }
+
+            &.active {
+                color: #00ADD9;
+
+                &:before {
+                    background: #00ADD9;
+                }
+            }
+        }
+
+        &_item {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+
+        &_img {
+            margin-bottom: 30px;
+            max-width: 100%;
+        }
+        &_text {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1400px) {
     .container {
         max-width: 1120px;
@@ -515,6 +661,13 @@ h3 {
     
     .swiper-button-prev {
         left: -40px;
+    }
+    .chest {
+        &-services {
+            &_wrap {
+                gap: 40px;
+            }
+        }
     }
 }
 
@@ -538,6 +691,29 @@ h3 {
     .reviews_swiper, .certificates_swiper {
         width: 94%;
         margin: 0 auto;
+    }
+    .page {
+        &-navbar {
+            &_title {
+                display: none;
+            }
+            .navbar_phone {
+                margin-left: auto;
+            }
+        }
+    }
+    .chest {
+        &-services {
+            &_title {
+                font-size: 36px;
+            }
+            &_tab {
+                font-size: 20px;
+            }
+            &_wrap {
+                grid-template-columns: 340px 1fr;
+            }
+        }
     }
 }
 
@@ -652,11 +828,32 @@ h3 {
             width: 45%;
         }
     }
+    .chest {
+        &-offer {
+            &_wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+        }
+        &-services {
+            &_wrap {
+                grid-template-columns: 1fr;
+                gap: 20px
+            }
+            &_tab {
+                margin-bottom: 16px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
     .container {
         max-width: 90%;
+    }
+    h1 {
+        font-size: 32px;
     }
     h2 {
         font-size: 24px;
@@ -712,6 +909,7 @@ h3 {
         padding: 8px 24px;
         font-size: 16px;
         border-radius: 8px;
+        width: auto;
     }
     .services {
         &_title {
@@ -753,7 +951,6 @@ h3 {
     }
     .reviews_slide {
         margin-top: 20px;
-        margin-bottom: 10px;
     }
     .posts {
         &_all {
@@ -792,6 +989,26 @@ h3 {
         }
         &_socials {
             margin-left: 0;
+        }
+    }
+    .chest {
+        &-offer {
+            &_title {
+                margin-bottom: 20px;
+            }
+            &_text {
+                font-size: 14px;
+            }
+        }
+        &-services {
+            &_title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            &_tab {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
         }
     }
 }
